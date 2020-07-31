@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>etch-a-Sketch project</title>
+    <style>
+        #container {
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            background-color: oldlace;
+            
+        }
+
+        
+        div1 {
+            background-color: dodgerblue;
+            width: 50%;
+            height: 50%;
+            display: flex;
+            /*flex-basis: 30em;*/
+        }
+
+        div2 {
+            background-color: orangered;
+            width: 50%;
+            height: 50%;
+            display: flex;
+           /* flex-basis: 10em;*/
+        }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <div class="grid">
+      
+    </div>
+    
+
+    <script>
+      const containerDiv = document.querySelector("#container")  
+      let div1 = document.createElement("div");
+      div1.textContent = "Hello World!"
+      div1.classList.add("control-func");
+      //div1.appendChild(div1Content);
+      let div2 = document.createElement("div");
+      div2.textContent = "This is the second 'div'";
+     // div2.appendChild(div2Content);
+      console.log(div1);
+
+
+      // Add the newly created "div's" to the container
+      containerDiv.appendChild(div1);
+      containerDiv.appendChild(div2);
+
+      
+      div1.onmouseover = function() {
+        this.style.backgroundColor = "green";
+        
+      }
+
+       div2.onmouseover = function() {
+         this.style.backgroundColor = "red";
+       } 
+
+      div1.onmouseout = function() {
+        this.style.backgroundColor = "transparent";
+
+      }
+
+      div2.onmouseout = function() {
+        this.style.backgroundColor = "transparent";
+      }
+
+      /*document.getElementById("Clear grid").onclick = function () {alert("hello");}
+
+
+      let e1 = document.getElementById("Clear grid");
+        if (e1.addEventListener)
+          e1.addEventListener("click", doFunction, false);
+          else if (e1.attachEvent)
+            e1.attachEvent("onclick", doFunction);
+         
+         */
+
+        let emptyButton = document.createElement("button");
+        emptyButton.textContent = "empty";
+        emptyButton.classList.add("control-func");
+
+        containerDiv.appendChild(emptyButton);
+        emptyButton.addEventListener("click", emptyButton); 
+    </script>
+  </body>
+</html>
